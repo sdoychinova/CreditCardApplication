@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Application>
+
+
+    @foreach (var item in Model)
+    {
+<div>
+    <h2>@item.FisrtName</h2>
+    <h3>@item.LastName</h3>
+    <h4>@item.DateOfBirth</h4>
+    <h4>@item.AnnualIncome</h4>
+    @if (item.ApplicationCardResult != null)
+    {
+        <h4>@item.ApplicationCardResult.APR</h4>
+        <h4>@item.ApplicationCardResult.PromotionalMessage</h4>
+        if (item.ApplicationCardResult.Type == CardType.BarclayCard)
+        {
+            <img src="~/images/barclaycard.jpg" />
+        }
+        else if (item.ApplicationCardResult.Type == CardType.Vanquish)
+        {
+            <img src="~/images/vanquis.jpg" />
+        }
+    }
+    else
+    {
+        <h4>No credit cards are available</h4>
+    }
+    <div>--------------------------------------------------------------------------------------------------------</div>
+</div>
+    }

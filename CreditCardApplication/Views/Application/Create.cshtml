@@ -1,0 +1,43 @@
+﻿@model Application
+
+<form asp-action="Create" method="post" role="form">
+    <h4>You're just one step away from your credit card.</h4>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="FisrtName">First Name</label>
+        <div>
+            <input asp-for="FisrtName" />
+        </div>
+        <span asp-validation-for="FisrtName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <div>
+            <input asp-for="LastName" />
+        </div>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AnnualIncome">Annual Income</label>
+        <div>
+            <input asp-for="AnnualIncome" />
+        </div>
+
+        <span asp-validation-for="AnnualIncome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfBirth">Date Of Birth</label>
+        <div>
+            <div>
+                <input asp-for="DateOfBirth" />
+            </div>
+        </div>
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Complete application" />
+        </div>
+    </div>
+</form>

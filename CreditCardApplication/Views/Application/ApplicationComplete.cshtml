@@ -1,0 +1,19 @@
+﻿@model Card
+
+@if (Model.IsEmpty())
+{
+    <h3>No  credit cards are available</h3>
+}
+else
+{
+    @if (Model.Type == CardType.BarclayCard)
+    {
+        <img src="~/images/barclaycard.jpg" />
+    }
+    else if (Model.Type == CardType.Vanquish)
+    {
+        <img src="~/images/vanquis.jpg" />
+    }
+    <h4>APR: @Model.APR</h4>
+    <h4>@Model.PromotionalMessage</h4>
+}
